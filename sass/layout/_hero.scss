@@ -1,0 +1,21 @@
+@use '../abstracts/colors';
+@use '../abstracts/mixins';
+.section-hero {
+  background: linear-gradient(to right, colors.$main, colors.$secondary);
+  @include mixins.flex-center(flex, column);
+  height: 70vh;
+  margin-block-end: 3rem;
+}
+
+.hero {
+  @include mixins.flex-center(flex, column);
+  color: colors.$text-inverse;
+}
+.hero-txt-box {
+  max-width: 140rem;
+  width: 90%;
+  margin-inline: auto;
+  p {
+    color: #fff;
+  }
+}

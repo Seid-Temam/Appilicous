@@ -1,0 +1,55 @@
+@use '../abstracts/mixins';
+@use '../abstracts/colors';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+  font-family: 'Roboto', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 0 0.75em;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child,
+p:last-child {
+  margin: 0;
+}
+
+.primary-heading {
+  @include mixins.responsive-font(4rem, 6rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.intro-txt {
+  @include mixins.responsive-font(2rem, 3rem);
+}
+
+h2 {
+  @include mixins.responsive-font(3rem, 5rem);
+  color: colors.$text-main;
+}
+h3 {
+  @include mixins.responsive-font(2rem, 3rem, 600);
+  color: colors.$text-main;
+}
+p {
+  @include mixins.responsive-font(1.7rem, 3rem);
+  color: colors.$text-main;
+}
+
+.social-links {
+  @include mixins.responsive-font(3rem, 6rem);
+}
+.footer-nav {
+  @include mixins.responsive-font(2rem, 4rem);
+}

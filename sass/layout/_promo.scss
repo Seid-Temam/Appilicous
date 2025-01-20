@@ -1,0 +1,38 @@
+@use '../abstracts/colors';
+
+.amazing {
+  background-color: colors.$accent;
+  max-width: 140rem;
+  width: 90%;
+  margin-inline: auto;
+  padding: 2rem;
+
+  transform: translateY(-50%);
+  h2 {
+    color: #fff;
+    text-transform: uppercase;
+  }
+  p {
+    color: #fff;
+  }
+}
+.promo {
+  margin-block-start: 20rem;
+  // padding-block-start: rem;
+  background-color: colors.$main;
+}
+.promo-txt-box {
+  padding-inline: 4rem;
+  padding-block-end: 3rem;
+  h2,
+  h3,
+  p {
+    color: #fff;
+  }
+  h2 {
+    margin-block-start: -4rem;
+  }
+  a {
+    color: #fff;
+  }
+}

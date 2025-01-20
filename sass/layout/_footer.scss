@@ -1,0 +1,50 @@
+@use '../abstracts/colors';
+@use '../abstracts/mixins';
+footer {
+  padding: 5rem;
+  background-color: colors.$dark;
+  position: relative;
+
+  h3,
+  p,
+  a {
+    color: #fff;
+  }
+  h3 {
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      border: 1px solid colors.$dark;
+      position: absolute;
+      width: 100%;
+    }
+    &::before {
+      top: -1rem;
+    }
+    &::after {
+      bottom: -1rem;
+    }
+  }
+}
+footer {
+  background-image: url('../../img/logo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  // z-index: -1;
+  background-blend-mode: multiply;
+}
+
+.social-links {
+  @include mixins.flex-center;
+  gap: 3rem;
+  margin-block: 4rem;
+}
+
+.footer-nav {
+  @include mixins.flex-center;
+  justify-content: space-around;
+}
