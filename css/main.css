@@ -169,14 +169,11 @@ p {
   }
 }
 
-.logo {
-  width: 25%;
-  min-width: 10rem;
-  max-width: 15rem;
+header {
+  background: -webkit-gradient(linear, left top, right top, from(rgb(4, 140, 168)), to(rgb(22, 219, 147)));
+  background: linear-gradient(to right, rgb(4, 140, 168), rgb(22, 219, 147));
 }
-
 header .container {
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
