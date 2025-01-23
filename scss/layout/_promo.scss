@@ -1,12 +1,27 @@
 @use '../abstracts/colors';
+@use '../abstracts/mixins';
 .promo {
   background-color: colors.$main;
   position: relative;
   margin-block-start: 12rem;
   padding-inline: 2rem;
   color: colors.$text-inverse;
+
+  @media (min-width: 60em) {
+    padding-inline-end: 0;
+    @include mixins.grid(2);
+    .promo-imgbox {
+      background-image: url('../../img/phone-in-hand.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 .amazing {
+  max-width: 100rem;
   position: absolute;
   left: 0;
   right: 0;
@@ -25,7 +40,7 @@
   padding-block-start: 10rem;
   padding-block-end: 4rem;
   text-align: left;
-  p{
+  p {
     font-weight: 300;
     margin-block-end: 2rem;
   }

@@ -1,12 +1,46 @@
+@use '../abstracts/mixins';
 header {
   position: absolute;
-  display: flex;
-  justify-content: space-between;
+  @include mixins.flex($justify-content: space-between);
   width: 100%;
-  padding-inline: 1rem;
+  padding: 1em 2em;
   z-index: 300;
   nav {
     display: none;
+  }
+  @media (min-width: 60em) {
+    .mobile-menu {
+      display: none;
+    }
+    nav {
+      display: block;
+      ul {
+        @include mixins.flex($justify-content: space-between);
+        gap: 7rem;
+        font-size: clamp(2rem, 3vw, 2.5rem);
+        @media (min-width: 81.25em) {
+          & {
+            gap: 13rem;
+          }
+        }
+      }
+      li {
+        position: relative;
+
+        a::before {
+          content: '';
+          display: block;
+          width: 0;
+          height: 2px;
+          background-color: #000;
+          position: absolute;
+          top: -0.5rem;
+        }
+        a:hover::before {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 .logo {

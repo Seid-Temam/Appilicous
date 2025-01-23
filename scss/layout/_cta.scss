@@ -1,5 +1,7 @@
 @use '../abstracts/colors';
 .cta {
+  position: relative;
+  overflow: hidden;
   background-image: url('../../img/call-to-action-background.jpg');
   background-color: colors.$secondary;
   background-size: cover;
@@ -9,9 +11,36 @@
   color: colors.$text-inverse;
   padding: 3rem 5rem;
 
-  h2{
+  h2 {
     font-weight: 700;
     margin-block: 1rem;
   }
+}
 
+@media (min-width: 60em) {
+  .cta {
+    padding: 6rem;
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      background: colors.$accent;
+      position: absolute;
+      width: 100%;
+      border: 1em solid colors.$white;
+    }
+
+    &::before {
+      top: 0;
+      bottom: -1em;
+      transform: skewX(60deg);
+      left: -100%;
+    }
+    &::after {
+      top: -1em;
+      bottom: 0;
+      transform: skewX(60deg);
+      right: -100%;
+    }
+  }
 }

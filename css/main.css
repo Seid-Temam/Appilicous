@@ -321,13 +321,17 @@ template {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
 }
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
+  overflow-x: hidden;
   line-height: 1.5;
   text-align: center;
 }
@@ -340,6 +344,7 @@ ol {
 a {
   text-decoration: none;
   color: inherit;
+  text-transform: uppercase;
 }
 
 img {
@@ -375,12 +380,12 @@ body {
 }
 
 .intro {
-  font-size: clamp(2rem, 2vw, 4rem);
+  font-size: clamp(2rem, 2vw, 2.5rem);
   color: rgb(255, 255, 255);
 }
 
 h2 {
-  font-size: clamp(2rem, 7vw, 4rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 300;
   text-transform: uppercase;
   color: rgb(4, 140, 168);
@@ -409,15 +414,75 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
   width: 100%;
-  padding-inline: 1rem;
+  padding: 1em 2em;
   z-index: 300;
 }
 header nav {
   display: none;
+}
+@media (min-width: 60em) {
+  header .mobile-menu {
+    display: none;
+  }
+  header nav {
+    display: block;
+  }
+  header nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 1rem;
+    gap: 7rem;
+    font-size: clamp(2rem, 3vw, 2.5rem);
+  }
+}
+@media (min-width: 60em) and (min-width: 81.25em) {
+  header nav ul {
+    gap: 13rem;
+  }
+}
+@media (min-width: 60em) {
+  header nav li {
+    position: relative;
+  }
+  header nav li a::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    top: -0.5rem;
+  }
+  header nav li a:hover::before {
+    width: 100%;
+  }
 }
 
 .logo {
@@ -462,7 +527,7 @@ ion-icon {
   gap: 1rem;
 }
 .hero h1 {
-  font-size: clamp(4rem, 7vw, 8rem);
+  font-size: clamp(4rem, 7vw, 5rem);
   font-weight: 300;
 }
 .hero h1 span {
@@ -478,6 +543,29 @@ ion-icon {
   -webkit-margin-after: 1rem;
           margin-block-end: 1rem;
 }
+@media (min-width: 60em) {
+  .hero {
+    display: grid;
+    grid-template-columns: 70fr 30fr;
+    height: 95vh;
+  }
+  .hero .hero-textbox {
+    padding-inline: 20rem;
+  }
+  .hero .hero-textbox p {
+    -webkit-margin-after: 6rem;
+            margin-block-end: 6rem;
+  }
+  .hero .hero-imgbox {
+    background-image: url(../../img/phone.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    margin-bottom: -20rem;
+  }
+}
 
 .sales {
   padding: 4rem 2rem;
@@ -487,12 +575,26 @@ ion-icon {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
-  margin-block: 2rem;
+  margin-block: 3rem;
+}
+@media (min-width: 60em) {
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-block: 5rem;
+    max-width: 150rem;
+    margin-inline: auto;
+  }
 }
 
 .feature:not(:last-of-type) {
   -webkit-margin-after: 2rem;
           margin-block-end: 2rem;
+}
+
+.feature {
+  margin-inline: 2rem;
 }
 
 .feature-icon {
@@ -513,8 +615,26 @@ ion-icon {
   padding-inline: 2rem;
   color: rgb(255, 255, 255);
 }
+@media (min-width: 60em) {
+  .promo {
+    -webkit-padding-end: 0;
+            padding-inline-end: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .promo .promo-imgbox {
+    background-image: url("../../img/phone-in-hand.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+}
 
 .amazing {
+  max-width: 100rem;
   position: absolute;
   left: 0;
   right: 0;
@@ -545,6 +665,8 @@ ion-icon {
 }
 
 .cta {
+  position: relative;
+  overflow: hidden;
   background-image: url("../../img/call-to-action-background.jpg");
   background-color: rgb(22, 219, 147);
   background-size: cover;
@@ -559,6 +681,33 @@ ion-icon {
   margin-block: 1rem;
 }
 
+@media (min-width: 60em) {
+  .cta {
+    padding: 6rem;
+  }
+  .cta::before, .cta::after {
+    content: "";
+    display: block;
+    background: rgb(211, 24, 105);
+    position: absolute;
+    width: 100%;
+    border: 1em solid rgb(255, 255, 255);
+  }
+  .cta::before {
+    top: 0;
+    bottom: -1em;
+    -webkit-transform: skewX(60deg);
+            transform: skewX(60deg);
+    left: -100%;
+  }
+  .cta::after {
+    top: -1em;
+    bottom: 0;
+    -webkit-transform: skewX(60deg);
+            transform: skewX(60deg);
+    right: -100%;
+  }
+}
 footer {
   position: relative;
   background-color: #444;

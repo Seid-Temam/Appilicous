@@ -5,10 +5,19 @@
 }
 .features {
   @include mixins.grid(1);
-  margin-block: 2rem;
+  margin-block: 3rem;
+  @media (min-width: 60em) {
+    @include mixins.grid(3);
+    margin-block: 5rem;
+    max-width: 150rem;
+    margin-inline: auto;
+  }
 }
 .feature:not(:last-of-type) {
   margin-block-end: 2rem;
+}
+.feature {
+  margin-inline: 2rem;
 }
 .feature-icon {
   color: #fff;
