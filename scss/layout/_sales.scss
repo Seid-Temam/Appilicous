@@ -16,9 +16,7 @@
 .feature:not(:last-of-type) {
   margin-block-end: 2rem;
 }
-.feature {
-  margin-inline: 2rem;
-}
+
 .feature-icon {
   color: #fff;
   background: linear-gradient(to right, colors.$main, colors.$secondary);
@@ -26,4 +24,10 @@
   height: 4rem;
   padding: 1rem;
   border-radius: 50%;
+}
+
+@media (min-width: 60rem) {
+  .feature {
+    margin-inline: 1rem;
+  }
 }

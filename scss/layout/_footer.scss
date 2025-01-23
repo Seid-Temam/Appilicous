@@ -1,12 +1,13 @@
 @use '../abstracts/colors';
 @use '../abstracts/mixins';
 footer {
+  color: colors.$text-inverse;
   position: relative;
   background-color: colors.$dark;
-  padding: 8rem 4rem;
+  padding: 6rem 4rem 4rem;
   &::before {
     content: '';
-    // display: block;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -19,9 +20,6 @@ footer {
     opacity: 0.05;
   }
 
-  // background-color: colors.$dark;
-
-  color: colors.$text-inverse;
   h3 {
     margin-block-start: 0;
 
