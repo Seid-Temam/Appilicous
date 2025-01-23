@@ -1,0 +1,50 @@
+@use '../abstracts/colors';
+@use '../abstracts/mixins';
+footer {
+  position: relative;
+  background-color: colors.$dark;
+  padding: 8rem 4rem;
+  &::before {
+    content: '';
+    // display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../../img/logo.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+  }
+
+  // background-color: colors.$dark;
+
+  color: colors.$text-inverse;
+  h3 {
+    margin-block-start: 0;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: colors.$text-inverse;
+    }
+  }
+}
+.social-links,
+.footer-nav {
+  @include mixins.flex;
+  row-gap: 2rem;
+  column-gap: 4rem;
+  font-size: 3rem;
+}
+
+.footer-nav {
+  font-size: 2rem;
+  margin-block: 2rem;
+  // row-gap: 2rem;
+}

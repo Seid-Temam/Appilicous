@@ -1,0 +1,20 @@
+@use '../abstracts/mixins';
+@use '../abstracts/colors';
+.sales {
+  padding: 4rem 2rem;
+}
+.features {
+  @include mixins.grid(1);
+  margin-block: 2rem;
+}
+.feature:not(:last-of-type) {
+  margin-block-end: 2rem;
+}
+.feature-icon {
+  color: #fff;
+  background: linear-gradient(to right, colors.$main, colors.$secondary);
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+  border-radius: 50%;
+}

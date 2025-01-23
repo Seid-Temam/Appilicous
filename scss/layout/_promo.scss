@@ -1,0 +1,32 @@
+@use '../abstracts/colors';
+.promo {
+  background-color: colors.$main;
+  position: relative;
+  margin-block-start: 12rem;
+  padding-inline: 2rem;
+  color: colors.$text-inverse;
+}
+.amazing {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: colors.$accent;
+  color: colors.$text-inverse;
+  width: 90%;
+  margin-inline: auto;
+  padding: 2rem;
+  p {
+    font-weight: 300;
+    margin-block: 2rem;
+  }
+}
+.promo-textbox {
+  padding-block-start: 10rem;
+  padding-block-end: 4rem;
+  text-align: left;
+  p{
+    font-weight: 300;
+    margin-block-end: 2rem;
+  }
+}

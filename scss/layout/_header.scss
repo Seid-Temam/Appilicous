@@ -1,0 +1,26 @@
+header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-inline: 1rem;
+  z-index: 300;
+  nav {
+    display: none;
+  }
+}
+.logo {
+  width: 25%;
+  min-width: 10rem;
+  max-width: 15rem;
+}
+
+.mobile-menu {
+  font-size: 5rem;
+}
+ion-icon {
+  color: #fff;
+}
+[name^='close'] {
+  display: none;
+}

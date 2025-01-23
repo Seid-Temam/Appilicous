@@ -1,0 +1,31 @@
+@mixin flex($direction: row, $justify-content: center, $align-items: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@mixin grid($columns: 12, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// @mixin responsive-font-size(
+//   $min-size,
+//   $max-size,
+//   $min-vw: 320px,
+//   $max-vw: 1200px
+// ) {
+//   font-size: clamp(
+//     $min-size,
+//     // Minimum font size
+//     calc(
+//         #{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-vw}) /
+//               (#{$max-vw} - #{$min-vw}))
+//       ),
+//     $max-size // Maximum font size
+//   );
+// }

@@ -1,0 +1,17 @@
+@use '../abstracts/colors';
+.btn {
+  padding: 1.5rem 3.5rem;
+  display: inline-block;
+  font-size: clamp(1.5rem, 1vw, 3rem);
+  color: colors.$text-inverse;
+  text-transform: uppercase;
+  margin-inline-end: 1rem;
+}
+
+.btn--primary {
+  background-color: colors.$accent;
+}
+.btn--secondary {
+  box-shadow: inset 0 0 0 2px colors.$text-inverse;
+  // margin: -2rem;
+}

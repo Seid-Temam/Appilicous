@@ -1,0 +1,23 @@
+@use '../abstracts/colors';
+@use '../abstracts/mixins';
+.hero {
+  background: linear-gradient(to right, colors.$main, colors.$secondary);
+  position: relative;
+  height: 90vh;
+  padding: 7rem 2rem;
+  @include mixins.flex;
+  h1 {
+    font-size: clamp(4rem, 7vw, 8rem);
+    font-weight: 300;
+    span {
+      font-weight: 600;
+    }
+  }
+  p {
+    margin-block-end: 2rem;
+  }
+  .btn:first-of-type{
+    margin-inline-end: 1rem;
+    margin-block-end: 1rem;
+  }
+}

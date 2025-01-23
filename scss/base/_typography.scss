@@ -1,0 +1,36 @@
+@use '../abstracts/mixins';
+@use '../abstracts/colors';
+@use '../abstracts/fonts';
+h1 {
+  text-transform: uppercase;
+  color: colors.$text-inverse;
+}
+body {
+  font-family: fonts.$base-font;
+}
+
+.intro {
+  font-size: clamp(2rem, 2vw, 4rem);
+  color: colors.$text-inverse;
+}
+h2 {
+  font-size: clamp(2rem, 7vw, 4rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  color: colors.$main;
+  color: inherit;
+}
+h3 {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-block: 1rem;
+}
+p {
+  font-size: clamp(1rem, 5vw, 2rem);
+  font-weight: 400;
+}
+.feature {
+  color: colors.$main;
+}
